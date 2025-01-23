@@ -1,0 +1,119 @@
+openapi: 3.0.0
+info:
+  title: Designer Studio API
+  description: List of all the APIs to be used in Studio
+  contact:
+    name: Hir Desai
+    email: desai.hir@northeasterm.edu
+    url: https://github.com/orgs/info-6150-fall-2023/teams/designerstudio
+  version: '1.0'
+servers:
+  - url: 'http://localhost:8080'
+paths:
+  
+  /userProcessProductionList/{userId}:
+    get:
+      description: Gives the list of process for the user
+      parameters: 
+        - name: userId
+          in: path
+          description: user Id to get the process list
+          required: true
+          content: 
+            text/plain: 
+              example: desai.hir
+      responses:
+        '200':
+          description: Success Response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  processList:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        processId:
+                          type: integer
+                        processDefinition:
+                          type: string
+                    example:
+                      - id: H001
+                        name: Enrollment of the Students
+                      - id: H002
+                        name: Course Registration
+        '500':
+          description: Internal Server Error
+          content: 
+            application/json: 
+              schema: 
+                $ref: '#/components/schemas/InternalError'
+  /deploy:
+    post: 
+      summary: API to deploy the data from the process JSON to table
+      description: Deployer to append the requird data to the tables for dyna screen
+      requestBody: 
+        content: 
+          application/json: 
+            schema: 
+              type: object
+              properties: 
+                processId:
+                  type: string
+                  example: H001
+                processDefinition:
+                  type: string
+                  example: json data in the string format
+                fieldList:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        fieldId:
+                          type: integer
+                        fieldDefinition:
+                          type: string
+                    example:
+                      - id: 1
+                        name: Checkbox - A
+                      - id: 2
+                        name: Textfield - A
+                      - id: 3
+                        name: Textfield - B
+                      - id: 4
+                        name: Dropdown - A
+                      - id: 5
+                        name: Radio button - A
+                      - id: 6
+                        name: Date - A
+      responses: 
+        '200':
+          description: Success Response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  processId:
+                    type: string
+                    example: H001
+                  status:
+                    type: boolean
+                    example: true
+        '500':
+          description: Internal Server Error
+          content: 
+            application/json: 
+              schema: 
+                $ref: '#/components/schemas/InternalError'
+  
+components: 
+  schemas: 
+    InternalError:
+      type: object
+      properties: 
+        msg:
+          type: array
+          example: Invalid Name (Internal Error)

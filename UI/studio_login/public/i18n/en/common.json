@@ -1,0 +1,21 @@
+{
+    "title": "Designer Studio",
+    "tab.Sandbox.label": "Sanbox",
+    "tab.Production.label": "Production",
+    "Username.textfield.label": "Username",
+    "Password.textfield.label": "Password",
+    "SignUp.button.label": "SignUp",
+    "submit.button.label": "Submit",
+    "Copyright.label": "All rights reserved. Team Designer Studio", 
+    "E-mail.label": "Correo electrónico",
+    "MovetoSignIn.label": "¿Ya tienes una cuenta? Iniciar sesión",
+    "ProcessID": "Process ID",
+    "NewProcess.label": "New Process",
+    "ProcessDetails.label": "Process Details",
+    "SelectedElement.label": "Selected Element",
+    "Action.label": "Action",
+    "Proceed.label": "Proceed",
+    "Process.label": "Process"
+
+}
+   

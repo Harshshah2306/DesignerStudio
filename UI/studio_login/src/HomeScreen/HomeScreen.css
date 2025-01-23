@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalnia&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=PT+Mono&family=Satisfy&family=Yeseva+One&display=swap');
+#dividerHomeScreen{
+    background-color: #01579b;
+    height: 3px;
+    width: 280px;
+}
+
+::-webkit-scrollbar {
+    width: 3px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+    /* background-color: 187, 222, 251,0.2; */
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #01579b;
+  }
+
+  .FooterContainer {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f0f0f0;
+    /* background-color: pink; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* height: 2500; */
+    /* height: ; */
+    width: 100%;
+    padding: 10px 0;
+    z-index: 1; /* Ensure footer is below the pager */
+    grid-template-columns: auto;
+  }
+
+/* .HeaderContainer{
+    background-color: #002F6C;
+} */
+
+.VideoFrame{
+    /* background-color: #01579b; */
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: -1;
+}
+
+.cardItem{
+    /* transition: , */
+    -webkit-filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
+    filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
+    /* background-color: black; */
+    /* background-color: "rgb(187, 222, 251)"; */
+}
+
+#cardItemGrid{
+  height:500;
+}
+
+.BasicPaginationContainer{
+  display:flex;
+  justify-content: center;
+}

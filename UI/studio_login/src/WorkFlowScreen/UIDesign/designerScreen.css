@@ -1,0 +1,59 @@
+* {
+    box-sizing: border-box;
+  }
+
+#containerRoot{
+  background: 'linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,144,170,1) 35%, rgba(120,173,210,1)100%)';
+  width: 100%;
+}
+
+.containerPaper{
+  border-radius : '12px';
+  height: "310px";
+  width: 100%;
+}
+
+#designerEvt{
+    position: absolute;
+    margin-top: 54%;
+    margin-left: 1%;
+}
+
+#divider1{
+    background-color: red;
+    height: 3px;
+    width: 280px;
+}
+
+#divider2{
+  background-color: blue;
+  height: 3px;
+  width: 280px;
+}
+
+#divider3{
+  background-color: green;
+  height: 3px;
+  width: 280px;
+}
+
+#divider4{
+  background-color: green;
+  height: 3px;
+  width: 980px;
+}
+
+
+
+
+
+
+
+
+
+  
+body, html {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+}
+  

@@ -1,0 +1,93 @@
+openapi: 3.0.0
+info:
+  title: Designer Studio API
+  description: List of all the APIs to be used in Studio
+  contact:
+    name: Harsh Shah
+    email: shah.harsh9@northeastern.edu
+    url: https://github.com/orgs/info-6150-fall-2023/teams/designerstudio
+  version: '1.0'
+servers:
+  - url: 'http://localhost:8080'
+paths:
+  /login:
+    get:
+      summary: Login Credential Validation
+      description: Operation to validate login credentials
+      parameters:
+        - in: query
+          name: userId
+          required: true
+          schema:
+            type: string
+          example: shah.harsh9@northeastern.edu
+        - in: query
+          name: password
+          required: true
+          schema:
+            type: string
+          example: dsdev@2023
+      responses:
+        '200':
+          description: Success Response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  userId:
+                    type: string
+                    example: shah.harsh9@northeastern.edu
+                  validate:
+                    type: boolean
+                    example: true
+        '500':
+          description: Internal Server Error
+          content: 
+            application/json: 
+              schema: 
+                $ref: '#/components/schemas/InternalError'
+  /signup:
+    post: 
+      summary: API for new users to sign up
+      description: Opertaion to add a new user
+      requestBody: 
+        content: 
+          application/json: 
+            schema: 
+              type: object
+              properties: 
+                userId:
+                  type: string
+                  example: shah.harsh9@northeastern.edu
+                password:
+                  type: string
+                  example: dsdev@2023
+      responses: 
+        '200':
+          description: Success Response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  userId:
+                    type: string
+                    example: shah.harsh9@northeastern.edu
+                  success:
+                    type: boolean
+                    example: true
+        '500':
+          description: Internal Server Error
+          content: 
+            application/json: 
+              schema: 
+                $ref: '#/components/schemas/InternalError'
+components: 
+  schemas: 
+    InternalError:
+      type: object
+      properties: 
+        msg:
+          type: array
+          example: Invalid Name (Internal Error)

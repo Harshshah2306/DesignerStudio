@@ -1,0 +1,26 @@
+.BasicPaginationContainer {
+    position: fixed;
+    /* bottom: 0; */
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    top: 2270;
+    left: 50%;
+    transform: translateX(-50%);
+    /* background-color: pink; */
+    margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* .BasicPaginationContainer {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    background-color: pink;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2; 
+  } */
+  

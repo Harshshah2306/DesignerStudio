@@ -1,0 +1,106 @@
+openapi: 3.0.0
+info:
+  title: Designer Studio API
+  description: List of all the APIs to be used in Studio
+  contact:
+    name: Prajwal Verma
+    email: verma.praj@northeastern.edu
+    url: https://github.com/orgs/info-6150-fall-2023/teams/designerstudio
+  version: '1.0'
+servers:
+  - url: 'http://localhost:8080'
+paths:
+  /createProcess:
+    post: 
+      summary: API to create a new process
+      description: Operation will create the new process
+      requestBody: 
+        content: 
+          application/json: 
+            schema: 
+              type: object
+              properties: 
+                processId:
+                  type: string
+                  example: H002 (newly generated process Id)
+                processDescription:
+                  type: string
+                  example: Student Enrollment Process
+      responses: 
+        '200':
+          description: Success Response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  processId:
+                    type: string
+                    example: H001
+                  status:
+                    type: boolean
+                    example: true
+        '500':
+          description: Internal Server Error
+          content: 
+            application/json: 
+              schema: 
+                $ref: '#/components/schemas/InternalError'
+  /dynaScreen/{processId}:
+    get:
+      description: Gives the list of fields to be used in the dynaScreen
+      parameters: 
+        - name: processId
+          in: path
+          description: processId to fetch the list of fields
+          required: true
+          content: 
+            text/plain: 
+              example: H001
+      responses:
+        '200':
+          description: Success Response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  processId:
+                    type: string
+                    example: H001
+                  fieldList:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        fieldId:
+                          type: integer
+                        fieldDefinition:
+                          type: string
+                    example:
+                      - id: 1
+                        name: Checkbox - A
+                      - id: 2
+                        name: Textfield - A
+                      - id: 3
+                        name: Textfield - B
+                      - id: 4
+                        name: Dropdown - A
+                      - id: 5
+                        name: Radio button - A
+                      - id: 6
+                        name: Date - A
+        '500':
+          description: Internal Server Error
+          content: 
+            application/json: 
+              schema: 
+                $ref: '#/components/schemas/InternalError'
+components: 
+  schemas: 
+    InternalError:
+      type: object
+      properties: 
+        msg:
+          type: array
+          example: Invalid Name (Internal Error)

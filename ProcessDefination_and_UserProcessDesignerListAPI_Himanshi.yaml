@@ -1,0 +1,94 @@
+openapi: 3.0.0
+info:
+  title: Designer Studio API
+  description: List of all the APIs to be used in Studio
+  contact:
+    name: Himanshi Panchal
+    email: panchal.him@northeastern.edu
+    url: https://github.com/orgs/info-6150-fall-2023/teams/designerstudio
+  version: '1.0'
+servers:
+  - url: 'http://localhost:8080'
+paths:
+  /processDefinition/{processId}:
+    get:
+      description: Gives the process details
+      parameters: 
+        - name: processId
+          in: path
+          description: process Id to get the process definition
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success Response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  processId:
+                    type: string
+                    example: H001
+                  processJson:
+                    type: string
+                    example: json string version
+        '500':
+          description: Internal Server Error
+          content: 
+            application/json: 
+              schema: 
+                $ref: '#/components/schemas/InternalError'
+  /userProcessDesignerList/{userId}:
+    get:
+      description: Gives the list of process for the user
+      parameters: 
+        - name: userId
+          in: path
+          description: user Id to get the process list
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success Response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  processList:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        processId:
+                          type: string
+                        processDefinition:
+                          type: string
+                    example:
+                      - id: H001
+                        name: Enrollment of the Students
+                      - id: H002
+                        name: Course Registration
+                      - id: H003
+                        name: Payment
+                      - id: H004
+                        name: Booking of the conference hall
+                      - id: H005
+                        name: Other Services
+        '500':
+          description: Internal Server Error
+          content: 
+            application/json: 
+              schema: 
+                $ref: '#/components/schemas/InternalError'
+components: 
+  schemas: 
+    InternalError:
+      type: object
+      properties: 
+        msg:
+          type: string
+          example: Invalid Name (Internal Error)

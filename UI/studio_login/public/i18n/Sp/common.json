@@ -1,0 +1,21 @@
+{
+    "title": "estudio de diseño",
+    "tab.Sandbox.label": "sandbox",
+    "tab.Production.label": "Producción",
+    "Username.textfield.label": "Nombre de usuario",
+    "Password.textfield.label": "Contraseña",
+    "SignUp.button.label": "Inscribirse",
+    "submit.button.label": "entregar",
+    "Copyright.label": "Reservados todos los derechos. Estudio de diseño de equipo",
+    "E-mail.label": "Correo electrónico",
+    "MovetoSignIn.label": "¿Ya tienes una cuenta? Iniciar sesión",
+    "ProcessID": "Identificacion de proceso",
+    "NewProcess.label": "Nuevo proceso",
+    "ProcessDetails.label": "Detalles del proceso",
+    "SelectedElement.label": "Elemento seleccionado",
+    "Action.label": "Acción",
+    "Proceed.label": "Proceder",
+    "Process.label": "Proceso"
+
+}
+   

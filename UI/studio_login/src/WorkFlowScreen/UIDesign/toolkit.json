@@ -1,0 +1,38 @@
+[
+    {
+        "id": "1",
+        "toolIcon": "Edit",
+        "toolDescription": "Textfield",
+        "type": "TEXT"
+    },{
+        "id": "2",
+        "toolIcon": "CalendarMonth",
+        "toolDescription": "Date",
+        "type": "DATE"
+    },{
+        "id": "3",
+        "toolIcon": "Numbers",
+        "toolDescription": "Number",
+        "type": "NUMBER"
+    },{
+        "id": "4",
+        "toolIcon": "Abc",
+        "toolDescription": "Text Only",
+        "type": "TEXTONLY"
+    },{
+        "id": "5",
+        "toolIcon": "Email",
+        "toolDescription": "Email Id",
+        "type": "EMAIL"
+    },{
+        "id": "6",
+        "toolIcon": "Key",
+        "toolDescription": "Password",
+        "type": "PASSWORD"
+    },{
+        "id": "7",
+        "toolIcon": "CheckBox",
+        "toolDescription": "Checkbox",
+        "type": "CHECKBOX"
+    }
+]
